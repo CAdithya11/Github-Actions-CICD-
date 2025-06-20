@@ -1,0 +1,17 @@
+name: check syntax errors
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs: 
+  check-for-syntax-errors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Python Syntax Checker
+        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
